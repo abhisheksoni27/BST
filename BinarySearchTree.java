@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class Tree {
+class BinarySearchTree {
 
     private Node root;
 
@@ -33,7 +33,7 @@ class Tree {
     public static void main(String[] args) {
         System.out.println("#################### TREE ###################");
 
-        Tree tree = new Tree();
+        BinarySearchTree tree = new BinarySearchTree();
         Random rand = new Random();
         for (int i = 0; i < 10; i++) {
             tree.add(rand.nextInt(100));
