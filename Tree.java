@@ -22,17 +22,27 @@ class Tree {
         }
     }
 
+    public int minimum() {
+        return this.root.findMin(Double.POSITIVE_INFINITY);
+    }
+
+    public void printRoot() {
+        print("Root = " + String.valueOf(this.root.data));
+    }
+
     public static void main(String[] args) {
         System.out.println("#################### TREE ###################");
 
         Tree tree = new Tree();
-
         Random rand = new Random();
         for (int i = 0; i < 10; i++) {
             tree.add(rand.nextInt(100));
         }
 
         tree.toString();
+        tree.printRoot();
+
+        print("Minimum = " + String.valueOf((tree.minimum())));
     }
 
     @Override

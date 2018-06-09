@@ -37,7 +37,7 @@ class Node {
 
     public Node search(int num) {
 
-        if(this.data == num){
+        if (this.data == num) {
             return this;
         }
 
@@ -50,6 +50,17 @@ class Node {
         }
 
         return null;
+    }
+
+    public int findMin(double currentMin) {
+        double min = currentMin;
+        if (this.data < min)
+            min = this.data;
+
+        if (this.left != null)
+            return (int) this.left.findMin(min);
+
+        return (int) min;
     }
 
     @Override
