@@ -12,8 +12,27 @@ class Tree {
         }
     }
 
-    public Node search(int num) {
-        return this.root.search(num);
+    public void search(int num) {
+        Node found = this.root.search(num);
+
+        if (found != null) {
+            print(found.toString());
+        } else {
+            print("Not Found.");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("#################### TREE ###################");
+
+        Tree tree = new Tree();
+
+        Random rand = new Random();
+        for (int i = 0; i < 10; i++) {
+            tree.add(rand.nextInt(100));
+        }
+
+        tree.toString();
     }
 
     @Override
@@ -24,27 +43,6 @@ class Tree {
 
     public static void print(String m) {
         System.out.println(m);
-    }
-
-    public static void main(String[] args) {
-        System.out.println("#################### TREE ###################");
-
-        Tree tree = new Tree();
-
-        Random rand = new Random();
-
-        for (int i = 0; i < 10; i++) {
-            tree.add(rand.nextInt(10) * rand.nextInt(10));
-        }
-
-        // Node found = tree.search(3);
-
-        // if (found != null) {
-        //     print(found.toString());
-        // } else {
-        //     print("Not Found.");
-        // }
-        tree.toString();
     }
 
 }
