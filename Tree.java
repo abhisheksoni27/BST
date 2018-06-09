@@ -10,6 +10,10 @@ class Tree {
         }
     }
 
+    public Node search(int num) {
+        return this.root.search(num);
+    }
+
     @Override
     public String toString() {
         this.root.traverse();
@@ -24,14 +28,20 @@ class Tree {
         System.out.println("#################### TREE ###################");
 
         Tree tree = new Tree();
-        tree.add(17);
-        tree.add(5);
+        tree.add(3);
         tree.add(2);
-        tree.add(7);
-        tree.add(71);
-        tree.add(0);
+        tree.add(1);
+        tree.add(4);
+        tree.add(5);
 
-        tree.toString();
+        Node found = tree.search(3);
+
+        if (found != null) {
+            print(found.toString());
+        } else {
+            print("Not Found.");
+        }
+        // tree.toString();
     }
 
 }

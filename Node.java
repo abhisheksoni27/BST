@@ -34,4 +34,26 @@ class Node {
             }
         }
     }
+
+    public Node search(int num) {
+
+        if(this.data == num){
+            return this;
+        }
+
+        if (this.left != null) {
+            return this.left.search(num);
+        }
+
+        if (this.right != null) {
+            return this.right.search(num);
+        }
+
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Node: Data = " + this.data;
+    }
 }
