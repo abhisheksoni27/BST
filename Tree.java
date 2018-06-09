@@ -6,12 +6,14 @@ class Tree {
         if (this.root == null) {
             this.root = new Node(num);
         } else {
-            if (num < this.root.data) {
-                // Go Left
-            } else {
-                // Go Right
-            }
+            this.root.addNode(num);
         }
+    }
+
+    @Override
+    public String toString() {
+        this.root.traverse();
+        return "";
     }
 
     public static void print(String m) {
@@ -22,7 +24,14 @@ class Tree {
         System.out.println("#################### TREE ###################");
 
         Tree tree = new Tree();
+        tree.add(17);
         tree.add(5);
+        tree.add(2);
+        tree.add(7);
+        tree.add(71);
+        tree.add(0);
+
+        tree.toString();
     }
 
 }

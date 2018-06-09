@@ -9,9 +9,29 @@ class Node {
 
     public void addNode(int num) {
         if (num < this.data) {
-            this.left = new Node(num);
+            if (this.left == null) {
+                this.left = new Node(num);
+            } else {
+                this.left.addNode(num);
+            }
         } else {
-            this.right = new Node(num);
+            if (this.right == null) {
+                this.right = new Node(num);
+            } else {
+                this.right.addNode(num);
+            }
+        }
+    }
+
+    public void traverse() {
+        if (this != null) {
+            if (this.left != null) {
+                this.left.traverse();
+            }
+            System.out.println(this.data);
+            if (this.right != null) {
+                this.right.traverse();
+            }
         }
     }
 }
