@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class Tree {
 
     private Node root;
@@ -28,20 +30,21 @@ class Tree {
         System.out.println("#################### TREE ###################");
 
         Tree tree = new Tree();
-        tree.add(3);
-        tree.add(2);
-        tree.add(1);
-        tree.add(4);
-        tree.add(5);
 
-        Node found = tree.search(3);
+        Random rand = new Random();
 
-        if (found != null) {
-            print(found.toString());
-        } else {
-            print("Not Found.");
+        for (int i = 0; i < 10; i++) {
+            tree.add(rand.nextInt(10) * rand.nextInt(10));
         }
-        // tree.toString();
+
+        // Node found = tree.search(3);
+
+        // if (found != null) {
+        //     print(found.toString());
+        // } else {
+        //     print("Not Found.");
+        // }
+        tree.toString();
     }
 
 }
